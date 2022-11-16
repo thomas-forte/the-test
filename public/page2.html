@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>page2</title>
     <style>
-        h1.title{
-            text-align: center;
-            font-weight: bold;
-        }
-        html, body{ 
-            height: 100%;
-        }
-        body{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        img{
-            height: 75px;
-            width: 75px;
-        }
+      h1.title {
+        text-align: center;
+        font-weight: bold;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      img {
+        height: 75px;
+        width: 75px;
+      }
+      button {
+        background: rgb(233, 233, 233);
+        background: linear-gradient(
+          125deg,
+          rgba(233, 233, 233, 1) 0%,
+          rgba(237, 237, 237, 1) 23%,
+          rgba(185, 185, 185, 1) 43%,
+          rgba(255, 255, 255, 1) 59%,
+          rgba(195, 195, 195, 1) 80%,
+          rgba(255, 255, 255, 1) 100%
+        );
+        border-style: double;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    <h1 class="title">We already told you, this is <b><i>not</i></b> a test.</h1>
-    <img src="./triangle-exclamation-solid.svg" alt="Red rounded triangle with white exclamation point centered and embedded within">
+  <body>
+    <h1 class="title">
+      We already told you, this is <b><i>not</i></b> a test.
+    </h1>
+    <img
+      src="./triangle-exclamation-solid.svg"
+      alt="Red rounded triangle with white exclamation point centered and embedded within"
+    />
     <a href="./index.html"><button type="button">Back to the test</button></a>
-</body>
-
+  </body>
 </html>
