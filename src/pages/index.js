@@ -66,7 +66,7 @@ const IndexPage = () => {
     </p>
     <p>...or is it?</p>
     <Link to={!rand() ? '/test' : '/failure'}><button type="button">Take the test!</button></Link>
-    <Link to={!rand() ? '/test' : '/failure'}><button type="button">Take the test!</button></Link>
+    <Link to={!rand() ? '/test' : '/failure'}><button type="button">Don't not take the test!</button></Link>
   </Layout>
   )
 }
