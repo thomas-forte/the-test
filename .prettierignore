@@ -1,0 +1,14 @@
+.git/
+.github/
+.cache/
+node_modules
+public/
+.firebaserc
+.gitignore
+firebase.json
+gatsby-browser.js
+gatsby-config.js
+gatsby-ssr.js
+package-lock.json
+package.json
+README.md
