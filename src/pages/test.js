@@ -1,24 +1,30 @@
-// Step 1: Import React
-import * as React from 'react'
-import { Link } from 'gatsby'
-import Layout from '../components/layout'
-import * as styles from './test.module.css'
-import Icon from '../components/icon'
+import * as React from "react";
+import { Link } from "gatsby";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 
-// Step 2: Define your component
-const AboutPage = () => {
-  return (
-    <Layout>
-      <div className={styles.center_center}>
-      <h1 className={styles.title}>
-      We already told you, this is <b><i>"not"</i></b> a test.
-    </h1>
-    <Icon></Icon>
-    <Link to="/"><button type="button">Back to the test</button></Link>
-      </div>
-    </Layout>
-  )
-}
+import Layout from "../components/layout";
+import Seo from "../components/seo";
+import * as styles from "./test.module.css";
 
-// Step 3: Export your component
-export default AboutPage
+const TestPage = () => (
+  <Layout>
+    <div className={styles.center}>
+      <h1>
+        We already told you, this is{" "}
+        <b>
+          <i>"not"</i>
+        </b>{" "}
+        a test.
+      </h1>
+      <FontAwesomeIcon icon={faTriangleExclamation} className={styles.icon} />
+      <Link to="/">
+        <button type="button">Back to the test</button>
+      </Link>
+    </div>
+  </Layout>
+);
+
+export const Head = () => <Seo title="Test Page" />;
+
+export default TestPage;
