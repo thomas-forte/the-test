@@ -31,6 +31,11 @@ const Header = ({ children }) => (
                 Not a Test
               </Link>
             </li>
+            <li class="nav-item">
+              <Link to="/form" className="nav-link" activeClassName="active">
+                Not a Test
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
