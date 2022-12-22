@@ -1,15 +1,15 @@
 import * as React from "react";
 import { Link } from "gatsby";
 
-const Header = ({ children }) => (
+const Header = () => (
   <>
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container">
+    <nav className="navbar navbar-expand-lg bg-light">
+      <div className="container">
         <Link to="/" className="navbar-brand">
           Test?
         </Link>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -17,21 +17,21 @@ const Header = ({ children }) => (
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
               <Link to="/test" className="nav-link" activeClassName="active">
                 Test
               </Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <Link to="/failure" className="nav-link" activeClassName="active">
                 Not a Test
               </Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <Link to="/form" className="nav-link" activeClassName="active">
                 Not a Test
               </Link>

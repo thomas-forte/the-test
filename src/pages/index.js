@@ -69,12 +69,12 @@ const IndexPage = () => (
     </p>
     <p>...or is it?</p>
     <Link to={!rand() ? "/test" : "/failure"}>
-      <button class="me-2" type="button">
+      <button className="me-2" type="button">
         Take the test!
       </button>
     </Link>
     <Link to={!rand() ? "/test" : "/failure"}>
-      <button class="me-2" type="button">
+      <button className="me-2" type="button">
         Don't not take the test!
       </button>
     </Link>
