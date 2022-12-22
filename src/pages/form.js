@@ -15,7 +15,8 @@ import { faEmpire } from "@fortawesome/free-brands-svg-icons";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import * as styles from "./form.module.css";
+import * as styles from "./form.module.scss";
+import { exitCode } from "process";
 
 let listOfMonths = [
   <option value="January">January</option>,
@@ -43,7 +44,7 @@ let listOfDates = [
   <option value="10">10 (Ten)</option>,
   <option value="11">11 (ee-lev -in)</option>,
   <option value="12">12 (12)</option>,
-  <option value="13">13</option>,
+  <option value="13">13 (...)</option>,
   <option value="14">14</option>,
   <option value="15">15</option>,
   <option value="16">16</option>,
@@ -94,7 +95,7 @@ let listOfCountries = [
 
 function generateYearOptions() {
   const list = [];
-  for (let c = 1700; c <= new Date().getFullYear(); c++) {
+  for (let c = 1; c <= new Date().getFullYear(); c++) {
     list.push(c);
   }
   return list.map((i) => <option value={i}>{i}</option>);
@@ -114,6 +115,21 @@ function generateDayOfTheWeeks() {
 
 function shuffleMonths() {
   listOfMonths = listOfMonths.sort((a, b) => 0.5 - Math.random());
+}
+
+function keyCodeIsNotADigit(keyCode) {
+  return ![
+    "Digit1",
+    "Digit2",
+    "Digit3",
+    "Digit4",
+    "Digit5",
+    "Digit6",
+    "Digit7",
+    "Digit8",
+    "Digit9",
+    "Digit0",
+  ].includes(keyCode);
 }
 
 const FormPage = () => (
@@ -153,9 +169,26 @@ const FormPage = () => (
 
       <div class="mb-2">
         <label for="yob">Year of Birthing</label>
-        <select class="form-control" name="yob" required>
-          {generateYearOptions()}
-        </select>
+        <div class="input-group">
+          <select
+            className={`form-control ${styles.remove_scrollbar}`}
+            name="yob"
+            required
+            onMouseDown={async (evt) => {
+              if (evt.target.tagName === "SELECT") {
+                evt.target.size = 5;
+              } else if (evt.target.tagName === "OPTION") {
+                await new Promise((r) => setTimeout(r, 10));
+                evt.target.parentElement.size = 1;
+                evt.stopPropagation();
+              }
+            }}
+          >
+            <option>Select...</option>
+            {generateYearOptions()}
+          </select>
+          <span class="input-group-text">A.D.</span>
+        </div>
       </div>
 
       <div class="mb-2">
@@ -164,7 +197,7 @@ const FormPage = () => (
           class="form-control"
           name="mob"
           required
-          onclick={shuffleMonths()}
+          onClick={shuffleMonths()}
         >
           {listOfMonths}
         </select>
@@ -233,7 +266,7 @@ const FormPage = () => (
           />
         </div>
         <span class="form-text text-muted">
-          IMPORTANT: Please do not provide a cellular number, as our current
+          IMPORTANT: Please DO NOT provide a cellular number, as our current
           landline service cannot connect to cellular devices at this time.
         </span>
       </div>
@@ -281,6 +314,7 @@ const FormPage = () => (
             name="income"
             required
             placeholder="919.54"
+            step="0.5"
           />
         </div>
         <span class="form-text text-muted">
@@ -302,6 +336,54 @@ const FormPage = () => (
             name="fbn"
             required
             placeholder="123-4-5-ABC/6"
+            onKeyDown={(evt) => {
+              if (evt.target.value?.length <= 2) {
+                if (keyCodeIsNotADigit(evt.code) && evt.code !== "Backspace") {
+                  evt.stopPropagation();
+                  evt.preventDefault();
+                  return;
+                }
+              } else if (evt.target.value?.length === 3) {
+                if (evt.code === "Backspace") {
+                } else if (keyCodeIsNotADigit(evt.code)) {
+                  evt.stopPropagation();
+                  evt.preventDefault();
+                  return;
+                } else {
+                  evt.target.value = evt.target.value + "-";
+                }
+              } else if (evt.target.value?.length <= 4) {
+                if (keyCodeIsNotADigit(evt.code) && evt.code !== "Backspace") {
+                  evt.stopPropagation();
+                  evt.preventDefault();
+                  return;
+                }
+              } else if (evt.target.value?.length === 5) {
+                if (evt.code === "Backspace") {
+                } else if (keyCodeIsNotADigit(evt.code)) {
+                  evt.stopPropagation();
+                  evt.preventDefault();
+                  return;
+                } else {
+                  evt.target.value = evt.target.value + "-";
+                }
+              } else if (evt.target.value?.length <= 6) {
+                if (keyCodeIsNotADigit(evt.code) && evt.code !== "Backspace") {
+                  evt.stopPropagation();
+                  evt.preventDefault();
+                  return;
+                }
+              } else if (evt.target.value?.length === 7) {
+                if (evt.code === "Backspace") {
+                } else if (keyCodeIsNotADigit(evt.code)) {
+                  evt.stopPropagation();
+                  evt.preventDefault();
+                  return;
+                } else {
+                  evt.target.value = evt.target.value + "-";
+                }
+              }
+            }}
           />
         </div>
         <span class="form-text text-muted">
