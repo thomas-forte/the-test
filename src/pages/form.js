@@ -231,9 +231,7 @@ const FormPage = () => {
             Annual Income:
           </label>
           <div className="input-group">
-            <span className="input-group-text">
-              <strike>X</strike>
-            </span>
+            <span className="input-group-text font-cardo">&#65942;</span>
             <input
               type="number"
               className="form-control"
