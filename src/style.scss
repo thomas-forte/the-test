@@ -8,6 +8,11 @@
   src: url(./fontsz/MedievalSharp-Regular.ttf);
 }
 
+@font-face {
+  font-family: "Cardo";
+  src: url(./fontsz/Cardo-Regular.ttf);
+}
+
 * {
   font-family: MedievalSharp;
 }
@@ -29,4 +34,8 @@ button {
   &:hover {
     border-color: #b50c00;
   }
+}
+
+.font-cardo {
+  font-family: Cardo;
 }
