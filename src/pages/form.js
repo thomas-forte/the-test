@@ -25,21 +25,6 @@ import {
 } from "../config/dates.config";
 import countriesAsSelectOptions from "../config/countries.config";
 
-function keyCodeIsNotADigit(keyCode) {
-  return ![
-    "Digit1",
-    "Digit2",
-    "Digit3",
-    "Digit4",
-    "Digit5",
-    "Digit6",
-    "Digit7",
-    "Digit8",
-    "Digit9",
-    "Digit0",
-  ].includes(keyCode);
-}
-
 const FormPage = () => {
   const [state, setState] = useState({
     listOfMonths: monthsAsSelectOptions,
@@ -63,7 +48,7 @@ const FormPage = () => {
 
       <hr className="mb-3" />
       {/* Personal Info */}
-      <form>
+      <form action="../form2">
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
             Name
