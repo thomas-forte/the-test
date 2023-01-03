@@ -81,7 +81,7 @@ const FormPage = () => (
         </select>
       </div>
 
-      <div className="mb-5">
+      <div className="mb-2">
         <label>4.) What is the airspeed velocity of an unladen swallow?</label>
         <div class="form-check">
           <input
@@ -128,7 +128,13 @@ const FormPage = () => (
             required
           />
           <label class="form-check-label" for="swallow4">
-            Is it African or European?
+            Am I wearing my{" "}
+            <a href="https://letmegooglethat.com/?q=HD+Glasses+3000%3A+Limited+Edition">
+              <em>
+                <u>HD Glasses 3000: Limited Edition</u>&trade;
+              </em>
+            </a>
+            &nbsp;?
           </label>
         </div>
       </div>
@@ -175,7 +181,13 @@ const FormPage = () => (
 
       <div className="mb-5">
         <label htmlFor="blank">6.) Leave this blank!</label>
-        <input id="blank" name="blank" type="text" className="form-control" />
+        <input
+          id="blank"
+          name="blank"
+          type="text"
+          className="form-control"
+          pattern=""
+        />
       </div>
 
       <div className="mb-5">
@@ -225,7 +237,8 @@ const FormPage = () => (
         <input
           id="mindRead"
           name="mindRead"
-          type="text"
+          type="number"
+          step="1"
           className="form-control"
           required
         />
@@ -241,6 +254,7 @@ const FormPage = () => (
           name="notPlanet"
           type="text"
           className="form-control"
+          pattern="Earth|Mars|earth|mars|HD Glasses"
           required
         />
         <span className="form-text text-muted">
@@ -504,6 +518,18 @@ const FormPage = () => (
           />
           <label class="form-check-label" for="riddleTwo6">
             Hasten
+          </label>
+        </div>
+        <div class="form-check">
+          <input
+            class="form-check-input"
+            type="radio"
+            name="riddleTwo"
+            id="riddleTwo7"
+            required
+          />
+          <label class="form-check-label" for="riddleTwo7">
+            HD Glasses 3000: Home & Office&trade;
           </label>
         </div>
       </div>
