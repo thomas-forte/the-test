@@ -61,10 +61,10 @@ const FormPage = () => {
         *Please note: all fields are required.
       </div>
 
-      <hr className="mb-2" />
+      <hr className="mb-3" />
       {/* Personal Info */}
       <form>
-        <div className="mb-2">
+        <div className="mb-3">
           <label htmlFor="name" className="form-label">
             Name
           </label>
@@ -88,7 +88,7 @@ const FormPage = () => {
           </span>
         </div>
 
-        <div className="mb-2">
+        <div className="mb-3">
           <label htmlFor="yob">Year of Birthing</label>
           <div className="input-group">
             <select
@@ -112,7 +112,7 @@ const FormPage = () => {
           </div>
         </div>
 
-        <div className="mb-2">
+        <div className="mb-3">
           <label htmlFor="mob">Month</label>
           <select
             className="form-control"
@@ -124,19 +124,19 @@ const FormPage = () => {
           </select>
         </div>
 
-        <div className="mb-2">
+        <div className="mb-3">
           <label htmlFor="date">Date</label>
           <select className="form-control" name="date" required>
             {datesAsSelectOptions}
           </select>
         </div>
 
-        <div className="mb-2">
+        <div className="mb-3">
           <label>Day of the Week</label>
           <div>{generateDayOfTheWeekRadioButtons()}</div>
         </div>
 
-        <div className="mb-2">
+        <div className="mb-3">
           <label htmlFor="time" className="form-label">
             Approximate Time of Birth
           </label>
@@ -152,7 +152,7 @@ const FormPage = () => {
           </span>
         </div>
 
-        <div className="mb-2">
+        <div className="mb-3">
           <label htmlFor="country" className="form-label">
             Country of Residence:
           </label>
@@ -170,7 +170,7 @@ const FormPage = () => {
           </span>
         </div>
 
-        <div className="mb-2">
+        <div className="mb-3">
           <label htmlFor="phone" className="form-label">
             Home landline telephone:
           </label>
@@ -192,7 +192,7 @@ const FormPage = () => {
           </span>
         </div>
 
-        <div className="mb-2">
+        <div className="mb-3">
           <label htmlFor="fax" className="form-label">
             Fax number:
           </label>
@@ -214,8 +214,14 @@ const FormPage = () => {
           <input
             className="form-check-input"
             type="checkbox"
-            checked
-            readOnly
+            onChange={(evt) => {
+              if (!evt.target.checked) {
+                console.log(evt.target.checked);
+                evt.stopPropagation();
+                evt.target.checked = true;
+                return;
+              }
+            }}
           />
           <label className="form-check-label" htmlFor="flexCheckDefault">
             I agree to receive promotional offers and our bi-weekly newsletter
@@ -226,7 +232,7 @@ const FormPage = () => {
         <hr />
 
         {/* Details */}
-        <div className="mb-2">
+        <div className="mb-3">
           <label htmlFor="income" className="form-label">
             Annual Income:
           </label>
@@ -246,7 +252,7 @@ const FormPage = () => {
           </span>
         </div>
 
-        <div className="mb-2">
+        <div className="mb-3">
           <label htmlFor="fbn" className="form-label">
             FBN ID Number:
           </label>
@@ -324,7 +330,7 @@ const FormPage = () => {
           </span>
         </div>
 
-        <div className="mb-2">
+        <div className="mb-3">
           <label htmlFor="sgti" className="form-label">
             SGTI Code:
           </label>
@@ -349,7 +355,7 @@ const FormPage = () => {
           </span>
         </div>
 
-        <div className="mb-2">
+        <div className="mb-3">
           <label htmlFor="ssn" className="form-label">
             SSN:
           </label>
