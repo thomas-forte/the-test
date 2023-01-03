@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
+import InputMask from "react-input-mask";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAddressCard,
@@ -178,12 +178,13 @@ const FormPage = () => {
             <span className="input-group-text">
               <FontAwesomeIcon icon={faPhone} />
             </span>
-            <input
+            <InputMask
               type="tel"
               className="form-control"
               name="phone"
               required
               placeholder="440-867-5309"
+              mask="999-999-9999"
             />
           </div>
           <span className="form-text text-muted">
@@ -200,12 +201,13 @@ const FormPage = () => {
             <span className="input-group-text">
               <FontAwesomeIcon icon={faFax} />
             </span>
-            <input
+            <InputMask
               type="tel"
               className="form-control"
               name="fax"
               required
               placeholder="440-867-5309"
+              mask="999-999-9999"
             />
           </div>
         </div>
@@ -260,69 +262,13 @@ const FormPage = () => {
             <span className="input-group-text">
               <FontAwesomeIcon icon={faEmpire} />
             </span>
-            <input
+            <InputMask
               type="text"
               className="form-control"
               name="fbn"
               required
               placeholder="123-4-5-ABC/6"
-              onKeyDown={(evt) => {
-                if (evt.target.value?.length <= 2) {
-                  if (
-                    keyCodeIsNotADigit(evt.code) &&
-                    evt.code !== "Backspace"
-                  ) {
-                    evt.stopPropagation();
-                    evt.preventDefault();
-                    return;
-                  }
-                } else if (evt.target.value?.length === 3) {
-                  if (evt.code === "Backspace") {
-                  } else if (keyCodeIsNotADigit(evt.code)) {
-                    evt.stopPropagation();
-                    evt.preventDefault();
-                    return;
-                  } else {
-                    evt.target.value = evt.target.value + "-";
-                  }
-                } else if (evt.target.value?.length <= 4) {
-                  if (
-                    keyCodeIsNotADigit(evt.code) &&
-                    evt.code !== "Backspace"
-                  ) {
-                    evt.stopPropagation();
-                    evt.preventDefault();
-                    return;
-                  }
-                } else if (evt.target.value?.length === 5) {
-                  if (evt.code === "Backspace") {
-                  } else if (keyCodeIsNotADigit(evt.code)) {
-                    evt.stopPropagation();
-                    evt.preventDefault();
-                    return;
-                  } else {
-                    evt.target.value = evt.target.value + "-";
-                  }
-                } else if (evt.target.value?.length <= 6) {
-                  if (
-                    keyCodeIsNotADigit(evt.code) &&
-                    evt.code !== "Backspace"
-                  ) {
-                    evt.stopPropagation();
-                    evt.preventDefault();
-                    return;
-                  }
-                } else if (evt.target.value?.length === 7) {
-                  if (evt.code === "Backspace") {
-                  } else if (keyCodeIsNotADigit(evt.code)) {
-                    evt.stopPropagation();
-                    evt.preventDefault();
-                    return;
-                  } else {
-                    evt.target.value = evt.target.value + "-";
-                  }
-                }
-              }}
+              mask="999-9-9-aaa/9"
             />
           </div>
           <span className="form-text text-muted">
@@ -338,11 +284,12 @@ const FormPage = () => {
             <span className="input-group-text">
               <FontAwesomeIcon icon={faInstitution} />
             </span>
-            <input
+            <InputMask
               type="text"
               className="form-control"
               name="sgti"
               placeholder="123-456-78901"
+              mask="999-999-99999"
             />
           </div>
           <span className="form-text text-muted">
@@ -380,9 +327,7 @@ const FormPage = () => {
         <hr />
 
         <div className="form-group">
-          <Link to="/form2">
-            <button type="submit">Next</button>
-          </Link>
+          <button type="submit">Next</button>
         </div>
       </form>
     </Layout>
