@@ -10,16 +10,17 @@ import * as styles from "./test.module.css";
 const TestPage = () => (
   <Layout>
     <div className={styles.center}>
-      <h1>
-        We already told you, this is{" "}
-        <b>
-          <i>"not"</i>
-        </b>{" "}
-        a test.
-      </h1>
-      <FontAwesomeIcon icon={faTriangleExclamation} className={styles.icon} />
-      <Link to="/">
-        <button type="button">Back to the test</button>
+      <iframe
+        className="mb-2"
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/2L4rX1qxPrk?controls=0&autoplay=1"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      ></iframe>
+      <Link to="/form2">
+        <button type="button">Continue</button>
       </Link>
     </div>
   </Layout>
