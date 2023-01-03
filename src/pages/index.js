@@ -68,12 +68,12 @@ const IndexPage = () => (
       testee-testing tests. But that's uncommon, and again, this is not a test.
     </p>
     <p>...or is it?</p>
-    <Link to={!rand() ? "/test" : "/failure"}>
+    <Link to="/form">
       <button className="me-2" type="button">
         Take the test!
       </button>
     </Link>
-    <Link to={!rand() ? "/test" : "/failure"}>
+    <Link to="/form">
       <button className="me-2" type="button">
         Don't not take the test!
       </button>
