@@ -70,6 +70,7 @@ export function generateDayOfTheWeekRadioButtons() {
       className="form-check-input form-check-inline"
       type="radio"
       name="dow"
+      required
       value={dow}
       key={dow}
     />

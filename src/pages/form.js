@@ -106,6 +106,7 @@ const FormPage = () => {
                 }
               }}
             >
+              <option value="">-</option>
               {generateYearsAsSelectOptions()}
             </select>
             <span className="input-group-text">A.D.</span>
@@ -120,6 +121,7 @@ const FormPage = () => {
             required
             onMouseDown={() => shuffleMonths()}
           >
+            <option value="">-</option>
             {state.listOfMonths}
           </select>
         </div>
@@ -127,6 +129,7 @@ const FormPage = () => {
         <div className="mb-3">
           <label htmlFor="date">Date</label>
           <select className="form-control" name="date" required>
+            <option value="">-</option>
             {datesAsSelectOptions}
           </select>
         </div>
@@ -144,7 +147,7 @@ const FormPage = () => {
             <span className="input-group-text">
               <FontAwesomeIcon icon={faSun} />
             </span>
-            <input type="time" className="form-control" name="time" />
+            <input type="time" className="form-control" name="time" required />
           </div>
           <span className="form-text text-muted">
             IMPORTANT: Please format time in standard Zulu time!! Oh and please
@@ -161,6 +164,7 @@ const FormPage = () => {
               <FontAwesomeIcon icon={faHouseFlag} />
             </span>
             <select className="form-control" name="country" required>
+              <option value="">-</option>
               {countriesAsSelectOptions}
             </select>
           </div>
@@ -216,6 +220,7 @@ const FormPage = () => {
           <input
             className="form-check-input"
             type="checkbox"
+            required
             onChange={(evt) => {
               if (!evt.target.checked) {
                 console.log(evt.target.checked);
@@ -289,6 +294,7 @@ const FormPage = () => {
               className="form-control"
               name="sgti"
               placeholder="123-456-78901"
+              required
               mask="999-999-99999"
             />
           </div>
