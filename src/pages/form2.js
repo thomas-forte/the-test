@@ -538,8 +538,11 @@ const FormPage = () => (
 
       <div className="mb-5">
         <label>
-          Please read the 'Terms and Conditions' page and select the appropriate
-          box:
+          Please read the{" "}
+          <a href="/TandC" target="_blank">
+            'Terms and Conditions'
+          </a>{" "}
+          page and select the appropriate box:
         </label>
         <div class="form-check">
           <input
