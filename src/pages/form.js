@@ -38,7 +38,7 @@ const FormPage = () => {
 
   return (
     <Layout>
-      <div className="alert alert-secondary mb-0" role="alert">
+      <div className="alert alert-secondary mb-0 mt-5" role="alert">
         INFORMATION
       </div>
 
@@ -48,7 +48,7 @@ const FormPage = () => {
 
       <hr className="mb-3" />
       {/* Personal Info */}
-      <form action="../test">
+      <form action="../test" className="mb-5">
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
             Name

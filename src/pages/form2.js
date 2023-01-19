@@ -6,13 +6,13 @@ import * as styles from "./form.module.scss";
 
 const FormPage = () => (
   <Layout>
-    <div className="alert alert-secondary mb-0" role="alert">
+    <div className="alert alert-secondary mb-0 mt-5" role="alert">
       QUESTIONS
     </div>
 
     <hr className="mb-2" />
 
-    <form>
+    <form className="mb-5">
       <div className="mb-5">
         <label>1.) Can you verify that you're not a robot?</label>
         <div class="form-check">
