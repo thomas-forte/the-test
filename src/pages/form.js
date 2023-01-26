@@ -48,7 +48,7 @@ const FormPage = () => {
 
       <hr className="mb-3" />
       {/* Personal Info */}
-      <form action="../test" className="mb-5">
+      <form action="../hdglassesad" className="mb-5">
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
             Name

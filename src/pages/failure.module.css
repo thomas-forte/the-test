@@ -7,7 +7,11 @@
 }
 
 .icon {
-  font-size: 75px;
-  margin-bottom: 0.25em;
+  font-size: 150px;
   color: #b50c00;
+}
+
+.smalltext {
+  font-size: 10px;
+  color:#757575
 }

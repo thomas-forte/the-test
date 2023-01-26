@@ -1,117 +1,104 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import * as styles from "./loading.module.css";
 
-const LoadingPage = () => {
+const ProcessingPage = () => {
   const [state, setState] = useState({
     progressAmount: 0,
     currentProgress: 0,
     pStep: 0.5,
-    label: "Loading...",
+    label: "Processing...",
     color: "bg-primary",
   });
 
-  function randomMinToValue(progressAmount, setState) {
-    if (progressAmount < 99) {
-      setTimeout(
-        (progressAmount, setState) => {
-          const newAmount = progressAmount + Math.random() * 35;
-          setState({
-            progressAmount: newAmount,
-          });
-          randomMinToValue(progressAmount, setState);
-        },
-        Math.random() * 1000 * 20,
-        progressAmount,
-        setState
-      );
-    }
-  }
-  // randomMinToValue(state.progressAmount, setState);
-
-  function test() {
-    const interval = setInterval(() => {
-      const updated_progress = state.currentProgress + state.pStep;
-      let progress = Math.round(
-        (Math.atan(updated_progress) / (Math.PI / 2)) * 100
-      );
-      setState({
-        progressAmount: progress,
-        currentProgress: updated_progress,
-        pStep: 0.5,
-      });
-      if (progress >= 100) {
-        clearInterval(interval);
-      } else if (progress >= 70) {
-        setState({
-          progressAmount: progress,
-          currentProgress: updated_progress,
-          pStep: 0.1,
-        });
-      }
-    }, 500);
-  }
-  // test();
+  const randomvalue = Math.random() * 100;
 
   function test2() {
     const interval = setInterval(() => {
       if (state.progressAmount === 0) {
         setState({
-          progressAmount: 25,
-          label: "Loading...",
+          progressAmount: 9,
+          label: "Processing...",
           color: "bg-primary",
         });
       } else if (state.progressAmount === 2) {
         setState({
-          progressAmount: 98,
-          label: "Loading...",
+          progressAmount: 99,
+          label: "Oops, Hang On...",
           color: "bg-warning",
         });
       } else if (state.progressAmount === 25) {
         setState({
           progressAmount: 36,
-          label: "Loading...",
+          label: "Processing...",
           color: "bg-primary",
         });
-      } else if (state.progressAmount === 36) {
+      } else if (state.progressAmount === 9) {
         setState({
-          progressAmount: 42,
-          label: "Loading...",
+          progressAmount: 17,
+          label: "Processing...",
           color: "bg-primary",
         });
-      } else if (state.progressAmount === 42) {
+      } else if (state.progressAmount === 17) {
         setState({
-          progressAmount: 66,
-          label: "Loading...",
+          progressAmount: 32,
+          label: "Processing...",
           color: "bg-primary",
         });
-      } else if (state.progressAmount === 66) {
+      } else if (state.progressAmount === 32) {
         setState({
-          progressAmount: 74,
-          label: "Loading...",
+          progressAmount: 38,
+          label: "Processing...",
           color: "bg-primary",
         });
-      } else if (state.progressAmount === 74) {
+      } else if (state.progressAmount === 38) {
         setState({
-          progressAmount: 81,
-          label: "Loading...",
+          progressAmount: 47,
+          label: "Processing...",
           color: "bg-primary",
         });
-      } else if (state.progressAmount === 81) {
+      } else if (state.progressAmount === 47) {
         setState({
-          progressAmount: 88,
-          label: "Loading...",
+          progressAmount: 54,
+          label: "Processing...",
           color: "bg-primary",
         });
-      } else if (state.progressAmount === 88) {
+      } else if (state.progressAmount === 54) {
+        setState({
+          progressAmount: 62,
+          label: "Processing...",
+          color: "bg-primary",
+        });
+      } else if (state.progressAmount === 62) {
+        setState({
+          progressAmount: 70,
+          label: "Processing...",
+          color: "bg-primary",
+        });
+      } else if (state.progressAmount === 70) {
+        setState({
+          progressAmount: 89,
+          label: "Processing...",
+          color: "bg-primary",
+        });
+      } else if (state.progressAmount === 89) {
+        setState({
+          progressAmount: 91,
+          label: "Processing...",
+          color: "bg-primary",
+        });
+      } else if (state.progressAmount === 91) {
+        setState({
+          progressAmount: 94,
+          label: "Processing...",
+          color: "bg-primary",
+        });
+      } else if (state.progressAmount === 94) {
         setState({
           progressAmount: 97,
-          label: "Loading...",
+          label: "Processing...",
           color: "bg-primary",
         });
       } else if (state.progressAmount === 97) {
@@ -120,22 +107,16 @@ const LoadingPage = () => {
           label: "Oops, Hang On...",
           color: "bg-danger",
         });
-      } else if (state.progressAmount === 98) {
-        setState({
-          progressAmount: 99,
-          label: "Loading...",
-          color: "bg-primary",
-        });
       } else if (state.progressAmount === 99) {
         setState({
           progressAmount: 99.9,
-          label: "Loading...",
+          label: "Processing...",
           color: "bg-primary",
         });
       } else if (state.progressAmount > 99 && state.progressAmount < 99.99) {
         setState({
           progressAmount: 99.99,
-          label: "Loading...",
+          label: "Processing...",
           color: "bg-primary",
         });
       } else if (
@@ -143,12 +124,14 @@ const LoadingPage = () => {
         state.progressAmount < 99.999
       ) {
         setState({
-          progressAmount: 99.99999999,
-          label: "Loading...",
+          progressAmount: 99.999,
+          label: "Processing...",
           color: "bg-primary",
         });
-      } else if (state.progressAmount > 99.9999999) {
-        window.location.href = "/failure";
+      } else if (state.progressAmount === 99.999) {
+        if (randomvalue > 20) {
+          window.location.href = "/submissionerror";
+        }
       }
     }, 5000);
   }
@@ -183,4 +166,4 @@ const LoadingPage = () => {
 
 export const Head = () => <Seo title="Processing..." />;
 
-export default LoadingPage;
+export default ProcessingPage;

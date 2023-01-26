@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,21 +9,19 @@ import * as styles from "./failure.module.css";
 const FailurePage = () => (
   <Layout>
     <div className={styles.center}>
-      <h1>
-        We already told you, this is{" "}
-        <b>
-          <i>"not"</i>
-        </b>{" "}
-        a test.
-      </h1>
       <FontAwesomeIcon icon={faTriangleExclamation} className={styles.icon} />
-      <Link to="/">
-        <button type="button">Back to the test</button>
-      </Link>
+      <h1>Ooops!</h1>
+      <p className="mb-0">
+        Seems like the problem was bigger than we thought...
+      </p>
+      <p>Please wait and try again later.</p>
+      <small className={styles.smalltext}>
+        In the meantime, be sure to visit our friends at HD Glasses&trade;!
+      </small>
     </div>
   </Layout>
 );
 
-export const Head = () => <Seo title="Failure Page" />;
+export const Head = () => <Seo title="Error!" />;
 
 export default FailurePage;
