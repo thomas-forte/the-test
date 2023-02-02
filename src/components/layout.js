@@ -2,9 +2,9 @@ import * as React from "react";
 
 import Header from "./Header";
 
-const Layout = ({ children }) => (
+const Layout = ({ className, children }) => (
   <>
-    <main className="container">{children}</main>
+    <main className={className + " container"}>{children}</main>
   </>
 );
 

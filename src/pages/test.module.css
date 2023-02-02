@@ -6,6 +6,12 @@
   flex-direction: column;
 }
 
+.icon {
+  font-size: 75px;
+  margin-bottom: 0.25em;
+  color: #b50c00;
+}
+
 @keyframes fadeOut {
   0% { opacity: 1;}
   90% { opacity: 1;}

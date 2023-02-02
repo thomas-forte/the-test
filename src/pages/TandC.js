@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "gatsby";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
@@ -8,8 +7,8 @@ import * as styles from "./TandC.module.scss";
 const rand = () => Math.random() * 100 > 90;
 
 const TandCPage = () => (
-  <Layout>
-    <h3>Terms & Conditions</h3>
+  <Layout className={styles.arial}>
+    <h3 className="mt-5">Terms & Conditions</h3>
     <hr />
     <br />
     <h5>I. INTRODUCTION</h5>
@@ -308,7 +307,7 @@ const TandCPage = () => (
       timeless treasure today!*
     </p>
     <hr />
-    <p>
+    <p className="mb-5">
       <small className="text-muted">
         *Some restrictions apply. No proof of purchase necessary. Limit one
         offer per household, not to be combined with any other offer. Void if

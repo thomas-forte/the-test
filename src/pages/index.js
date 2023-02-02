@@ -9,7 +9,7 @@ const rand = () => Math.random() * 100 > 90;
 
 const IndexPage = () => (
   <Layout>
-    <h1 className={styles.title}>
+    <h1 className={styles.title + " mt-5"}>
       This is{" "}
       <strike>
         <i>not</i>
@@ -74,7 +74,7 @@ const IndexPage = () => (
       </button>
     </Link>
     <Link to="/form">
-      <button className="me-2" type="button">
+      <button className="mb-5" type="button">
         Don't not take the test!
       </button>
     </Link>
