@@ -34,3 +34,15 @@
 .fadeOut {
   animation: fadeOut 30s;
 }
+
+.hoverblock {
+  position: fixed;
+  z-index: 1000;
+  width: 560px;
+  height: 315px;
+  margin-top: -70px;
+}
+
+.blackout {
+  background-color: black;
+}
