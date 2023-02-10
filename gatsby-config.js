@@ -9,10 +9,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `The Company`,
-    description: `The Company's Test`,
+    title: `The Test`,
+    description: `The Test`,
     author: `The Company`,
-    siteUrl: `https://the-company.mund.us`,
+    siteUrl: `https://thetest.mund.us`,
   },
   plugins: ["gatsby-plugin-sass"],
 };
