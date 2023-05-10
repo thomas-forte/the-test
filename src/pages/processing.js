@@ -16,123 +16,120 @@ const ProcessingPage = () => {
   const randomvalue = Math.random() * 100;
 
   function test2() {
+    // My main confusion is mixing setInterval and setTimeout to control state. It seems unpredictable.
+    // Some stackoverflows showed using a callback, either set inside the render function or some had it as a global. My guess is its mixing native and react js.
+    // A simple example of this is if you remove the last if case things get weird but why does the interval speed up??
+
+    // Welp I just rebuilt and tested it but am struggling reproducing it.
+
+    // I suppose am I doing anything that's a major redflag here? I have seen the interval change, and some flickering with the words, numbers, and progress value.
+    // There is also a timeout on the hdglassesad.js file that sometimes acts funny (the button appears like it should but then disappears?) but of course I can't force the error right now.
     const interval = setInterval(() => {
       if (state.progressAmount === 0) {
         setState({
+          ...state,
           progressAmount: 9,
-          label: "Processing...",
-          color: "bg-primary",
         });
       } else if (state.progressAmount === 2) {
         setState({
+          ...state,
           progressAmount: 99,
           label: "Oops, Hang On...",
           color: "bg-warning",
         });
       } else if (state.progressAmount === 25) {
         setState({
+          ...state,
           progressAmount: 36,
-          label: "Processing...",
-          color: "bg-primary",
         });
       } else if (state.progressAmount === 9) {
         setState({
+          ...state,
           progressAmount: 17,
-          label: "Processing...",
-          color: "bg-primary",
         });
       } else if (state.progressAmount === 17) {
         setState({
+          ...state,
           progressAmount: 32,
-          label: "Processing...",
-          color: "bg-primary",
         });
       } else if (state.progressAmount === 32) {
         setState({
+          ...state,
           progressAmount: 38,
-          label: "Processing...",
-          color: "bg-primary",
         });
       } else if (state.progressAmount === 38) {
         setState({
+          ...state,
           progressAmount: 47,
-          label: "Processing...",
-          color: "bg-primary",
         });
       } else if (state.progressAmount === 47) {
         setState({
+          ...state,
           progressAmount: 54,
-          label: "Processing...",
-          color: "bg-primary",
         });
       } else if (state.progressAmount === 54) {
         setState({
+          ...state,
           progressAmount: 62,
-          label: "Processing...",
-          color: "bg-primary",
         });
       } else if (state.progressAmount === 62) {
         setState({
+          ...state,
           progressAmount: 70,
-          label: "Processing...",
-          color: "bg-primary",
         });
       } else if (state.progressAmount === 70) {
         setState({
+          ...state,
           progressAmount: 89,
-          label: "Processing...",
-          color: "bg-primary",
         });
       } else if (state.progressAmount === 89) {
         setState({
+          ...state,
           progressAmount: 91,
-          label: "Processing...",
-          color: "bg-primary",
         });
       } else if (state.progressAmount === 91) {
         setState({
+          ...state,
           progressAmount: 94,
-          label: "Processing...",
-          color: "bg-primary",
         });
       } else if (state.progressAmount === 94) {
         setState({
+          ...state,
           progressAmount: 97,
-          label: "Processing...",
-          color: "bg-primary",
         });
       } else if (state.progressAmount === 97) {
         setState({
+          ...state,
           progressAmount: 2,
           label: "Oops, Hang On...",
           color: "bg-danger",
         });
       } else if (state.progressAmount === 99) {
         setState({
+          ...state,
           progressAmount: 99.9,
           label: "Processing...",
           color: "bg-primary",
         });
       } else if (state.progressAmount > 99 && state.progressAmount < 99.99) {
         setState({
+          ...state,
           progressAmount: 99.99,
-          label: "Processing...",
-          color: "bg-primary",
         });
       } else if (
         state.progressAmount > 99.98 &&
         state.progressAmount < 99.999
       ) {
         setState({
+          ...state,
           progressAmount: 99.999,
-          label: "Processing...",
-          color: "bg-primary",
         });
-      } else if (state.progressAmount === 99.999) {
+        // remove this case
+      } /*else if (state.progressAmount === 99.999) {
         if (randomvalue > 20) {
           window.location.href = "/submissionerror";
         }
-      }
+      }*/
     }, 5000);
   }
   test2();
