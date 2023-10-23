@@ -9,7 +9,7 @@ const rand = () => Math.random() * 100 > 90;
 
 const IndexPage = () => (
   <Layout>
-    <h1 className={styles.title + " mt-5"}>
+    <h1 className="mt-5 text-center fw-bold">
       This is{" "}
       <strike>
         <i>not</i>

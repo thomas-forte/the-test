@@ -8,7 +8,7 @@ import * as styles from "./failure.module.css";
 
 const FailurePage = () => (
   <Layout>
-    <div className={styles.center}>
+    <div className="vh-100 d-flex flex-column justify-content-center align-items-center">
       <FontAwesomeIcon icon={faTriangleExclamation} className={styles.icon} />
       <h1>Ooops!</h1>
       <p className="mb-0">

@@ -1,11 +1,3 @@
-.center {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
 .icon {
   font-size: 75px;
   margin-bottom: 0.25em;

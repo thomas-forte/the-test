@@ -139,7 +139,7 @@ const ProcessingPage = () => {
 
   return (
     <Layout>
-      <div className={styles.center}>
+      <div className="vh-100 d-flex flex-column justify-content-center align-items-center">
         <div
           className={styles.custom_progress + " progress"}
           role="progressbar"

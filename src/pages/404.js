@@ -9,7 +9,7 @@ import * as styles from "./test.module.css";
 
 const NotFoundPage = () => (
   <Layout>
-    <div className={styles.center}>
+    <div className="vh-100 d-flex flex-column justify-content-center align-items-center">
       <h1>Woah there eager beaver</h1>
       <p class="muted">
         the test you're looking for isn't here. Even if it exists at all...
