@@ -27,8 +27,7 @@
         "gatsby-plugin-sass": "^6.1.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
-        "react-input-mask": "^2.0.4",
-        "sass": "^1.56.1"
+        "react-input-mask": "^2.0.4"
     },
     "devDependencies": {
         "prettier": "^2.8.0"

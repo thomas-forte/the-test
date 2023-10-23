@@ -2,7 +2,7 @@ import * as React from "react";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import * as styles from "./TandC.module.scss";
+import * as styles from "./TandC.module.css";
 
 const rand = () => Math.random() * 100 > 90;
 

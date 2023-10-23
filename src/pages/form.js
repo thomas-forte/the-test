@@ -15,7 +15,7 @@ import { faEmpire } from "@fortawesome/free-brands-svg-icons";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import * as styles from "./form.module.scss";
+import * as styles from "./form.module.css";
 
 import {
   datesAsSelectOptions,
