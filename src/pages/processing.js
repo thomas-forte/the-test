@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import * as styles from "./loading.module.css";
 
 const ProcessingPage = () => {
   const [state, setState] = useState({
@@ -141,7 +140,12 @@ const ProcessingPage = () => {
     <Layout>
       <div className="vh-100 d-flex flex-column justify-content-center align-items-center">
         <div
-          className={styles.custom_progress + " progress"}
+          className="progress"
+          style={{
+            width: "650px",
+            maxWidth: "95%",
+            height: "32px",
+          }}
           role="progressbar"
           aria-label="Animated striped example"
           aria-valuenow="75"

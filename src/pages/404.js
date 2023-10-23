@@ -5,7 +5,6 @@ import { faHand } from "@fortawesome/free-solid-svg-icons";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import * as styles from "./test.module.css";
 
 const NotFoundPage = () => (
   <Layout>
@@ -14,7 +13,7 @@ const NotFoundPage = () => (
       <p class="muted">
         the test you're looking for isn't here. Even if it exists at all...
       </p>
-      <FontAwesomeIcon icon={faHand} className={styles.icon} />
+      <FontAwesomeIcon icon={faHand} size="5x" className="mb-3 dark-red" />
       <Link to="/">
         <button type="button">Back</button>
       </Link>

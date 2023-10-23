@@ -2,10 +2,9 @@ import * as React from "react";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import * as styles from "./TandC.module.css";
 
-const TandCPage = () => (
-  <Layout className={styles.arial}>
+const TermsPage = () => (
+  <Layout className="font-arial">
     <h3 className="mt-5">Terms & Conditions</h3>
     <hr />
     <br />
@@ -216,65 +215,65 @@ const TandCPage = () => (
       decided to leave you with some inspirational quotes by historical figures:
     </p>
     <br />
-    <blockquote className={styles.custom_quote + " blockquote"}>
+    <blockquote className="blockquote">
       <p class="mb-2">
         "I love Dallas. The people there are always so friendly."
       </p>{" "}
-      <footer class="blockquote-footer">John F. Kennedy</footer>
+      <footer class="blockquote-footer fs-6">John F. Kennedy</footer>
     </blockquote>
-    <blockquote className={styles.custom_quote + " blockquote"}>
+    <blockquote className="blockquote">
       <p class="mb-2">"Other than that, I really enjoyed the play."</p>{" "}
-      <footer class="blockquote-footer">Mary Todd Lincoln</footer>
+      <footer class="blockquote-footer fs-6">Mary Todd Lincoln</footer>
     </blockquote>
-    <blockquote className={styles.custom_quote + " blockquote"}>
+    <blockquote className="blockquote">
       <p class="mb-2">"It was probably nothing, go back to sleep."</p>{" "}
-      <footer class="blockquote-footer">Captain of the Titanic</footer>
+      <footer class="blockquote-footer fs-6">Captain of the Titanic</footer>
     </blockquote>
-    <blockquote className={styles.custom_quote + " blockquote"}>
+    <blockquote className="blockquote">
       <p class="mb-2">"Ow!"</p>{" "}
-      <footer class="blockquote-footer">Isaac Newton</footer>
+      <footer class="blockquote-footer fs-6">Isaac Newton</footer>
     </blockquote>
-    <blockquote className={styles.custom_quote + " blockquote"}>
+    <blockquote className="blockquote">
       <p class="mb-2">"What?"</p>{" "}
-      <footer class="blockquote-footer">Beethoven</footer>
+      <footer class="blockquote-footer fs-6">Beethoven</footer>
     </blockquote>
-    <blockquote className={styles.custom_quote + " blockquote"}>
+    <blockquote className="blockquote">
       <p class="mb-2">"I hope I get a window seat."</p>{" "}
-      <footer class="blockquote-footer">Rosa Parks</footer>
+      <footer class="blockquote-footer fs-6">Rosa Parks</footer>
     </blockquote>
-    <blockquote className={styles.custom_quote + " blockquote"}>
+    <blockquote className="blockquote">
       <p class="mb-2">"Where the heck are we?"</p>{" "}
-      <footer class="blockquote-footer">Christopher Columbus</footer>
+      <footer class="blockquote-footer fs-6">Christopher Columbus</footer>
     </blockquote>
-    <blockquote className={styles.custom_quote + " blockquote"}>
+    <blockquote className="blockquote">
       <p class="mb-2">"You want me to paint it WHERE??"</p>{" "}
-      <footer class="blockquote-footer">Michelangelo</footer>
+      <footer class="blockquote-footer fs-6">Michelangelo</footer>
     </blockquote>
-    <blockquote className={styles.custom_quote + " blockquote"}>
+    <blockquote className="blockquote">
       <p class="mb-2">"How the hell did you work that out?"</p>{" "}
-      <footer class="blockquote-footer">Pythagoras</footer>
+      <footer class="blockquote-footer fs-6">Pythagoras</footer>
     </blockquote>
-    <blockquote className={styles.custom_quote + " blockquote"}>
+    <blockquote className="blockquote">
       <p class="mb-2">"I think it looks just like her."</p>{" "}
-      <footer class="blockquote-footer">Pablo Picasso</footer>
+      <footer class="blockquote-footer fs-6">Pablo Picasso</footer>
     </blockquote>
-    <blockquote className={styles.custom_quote + " blockquote"}>
+    <blockquote className="blockquote">
       <p class="mb-2">"I don’t see the problem."</p>{" "}
-      <footer class="blockquote-footer">Stevie Wonder</footer>
+      <footer class="blockquote-footer fs-6">Stevie Wonder</footer>
     </blockquote>
-    <blockquote className={styles.custom_quote + " blockquote"}>
+    <blockquote className="blockquote">
       <p class="mb-2">"Bill, I told you to Mapquest it before we left!"</p>{" "}
-      <footer class="blockquote-footer">Meriwether Lewis</footer>
+      <footer class="blockquote-footer fs-6">Meriwether Lewis</footer>
     </blockquote>
-    <blockquote className={styles.custom_quote + " blockquote"}>
+    <blockquote className="blockquote">
       <p class="mb-2">
         "Where the hell did all those freakin' Indians come from?"
       </p>{" "}
-      <footer class="blockquote-footer">George Armstrong Custer</footer>
+      <footer class="blockquote-footer fs-6">George Armstrong Custer</footer>
     </blockquote>
-    <blockquote className={styles.custom_quote + " blockquote"}>
+    <blockquote className="blockquote">
       <p class="mb-2">“You are what you eat.”</p>{" "}
-      <footer class="blockquote-footer">Jeffrey Dahmer</footer>
+      <footer class="blockquote-footer fs-6">Jeffrey Dahmer</footer>
     </blockquote>
     <br />
     <h3>- END OF TERMS AND CONDITIONS PART I -</h3>
@@ -324,4 +323,4 @@ const TandCPage = () => (
 
 export const Head = () => <Seo title="Home" />;
 
-export default TandCPage;
+export default TermsPage;
