@@ -10,7 +10,7 @@ const NotFoundPage = () => (
   <Layout>
     <div className="vh-100 d-flex flex-column justify-content-center align-items-center">
       <h1>Woah there eager beaver</h1>
-      <p class="muted">
+      <p class="text-muted">
         the test you're looking for isn't here. Even if it exists at all...
       </p>
       <FontAwesomeIcon icon={faHand} size="5x" className="mb-3 dark-red" />
