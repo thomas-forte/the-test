@@ -1,11 +1,8 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { navigate } from "gatsby";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
-import * as styles from "./index.module.css";
-
-const rand = () => Math.random() * 100 > 90;
 
 const IndexPage = () => (
   <Layout>
@@ -18,11 +15,11 @@ const IndexPage = () => (
     </h1>
     <hr />
     <p>
-      <span className={styles.fancy}>D</span>o not be alarmed, dear friend, for
-      this is merely a test. That is to say that we are only testing this and
-      not actually doing it. Therefore, there is absolutely no cause for concern
-      of any kind. We could just as easily be doing the actual thing now if we
-      so wished, for that would be just as easy as conducting a test. But we're
+      <span className="drop-cap">D</span>o not be alarmed, dear friend, for this
+      is merely a test. That is to say that we are only testing this and not
+      actually doing it. Therefore, there is absolutely no cause for concern of
+      any kind. We could just as easily be doing the actual thing now if we so
+      wished, for that would be just as easy as conducting a test. But we're
       not. And of course if we were attempting it for real, we would be certain
       to do so properly and not in such an experimental manner. For the real
       thing is serious and should not be taken so lightly, as it may be confused
@@ -68,16 +65,12 @@ const IndexPage = () => (
       testee-testing tests. But that's uncommon, and again, this is not a test.
     </p>
     <p>...or is it?</p>
-    <Link to="/form">
-      <button className="me-2" type="button">
-        Take the test!
-      </button>
-    </Link>
-    <Link to="/form">
-      <button className="mb-5" type="button">
-        Don't not take the test!
-      </button>
-    </Link>
+    <button className="me-2" type="button" onClick={() => navigate("/form")}>
+      Take the test!
+    </button>
+    <button className="mb-5" type="button" onClick={() => navigate("/form")}>
+      Don't not take the test!
+    </button>
   </Layout>
 );
 
