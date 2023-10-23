@@ -6,7 +6,7 @@
   flex-direction: column;
 }
 
-.custom_progress{
+.custom_progress {
   min-width: 650px;
   height: 32px;
 }

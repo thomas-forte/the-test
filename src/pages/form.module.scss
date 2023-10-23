@@ -1,6 +1,6 @@
-.remove_scrollbar{
-    overflow-y: scroll;
-    &::-webkit-scrollbar {
-        display: none;
-    }
+.remove_scrollbar {
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
