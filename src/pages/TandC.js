@@ -4,8 +4,6 @@ import Layout from "../components/layout";
 import Seo from "../components/seo";
 import * as styles from "./TandC.module.css";
 
-const rand = () => Math.random() * 100 > 90;
-
 const TandCPage = () => (
   <Layout className={styles.arial}>
     <h3 className="mt-5">Terms & Conditions</h3>
