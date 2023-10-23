@@ -11,7 +11,7 @@ const FormPage = () => (
 
     <hr className="mb-2" />
 
-    <form action="../processing" className="mb-5">
+    <form action="../processing-results" className="mb-5">
       <div className="mb-5">
         <label>1.) Can you verify that you're not a robot?</label>
         <div class="form-check">

@@ -18,7 +18,7 @@ const SubmissionErrorPage = () => (
         Seems like the problem was bigger than we thought...
       </p>
       <p>Please wait and try again later.</p>
-      <small className="text-body-secondary" style={{ fontSize: "10px" }}>
+      <small className="text-muted" style={{ fontSize: "10px" }}>
         In the meantime, be sure to visit our friends at HD Glasses&trade;!
       </small>
     </div>

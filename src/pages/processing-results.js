@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 
-const ProcessingPage = () => {
+const ProcessingResultsPage = () => {
   const [state, setState] = useState({
     progressAmount: 0,
     currentProgress: 0,
@@ -129,7 +129,7 @@ const ProcessingPage = () => {
         });
       } else if (state.progressAmount === 99.999) {
         if (randomvalue > 20) {
-          window.location.href = "/submissionerror";
+          window.location.href = "/submission-error";
         }
       }
     }, 5000);
@@ -170,4 +170,4 @@ const ProcessingPage = () => {
 
 export const Head = () => <Seo title="Processing..." />;
 
-export default ProcessingPage;
+export default ProcessingResultsPage;
