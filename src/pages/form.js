@@ -22,18 +22,17 @@ import {
   monthsAsSelectOptions,
   generateYearsAsSelectOptions,
   generateDayOfTheWeekRadioButtons,
+  months,
 } from "../config/dates.config";
 import countriesAsSelectOptions from "../config/countries.config";
 
 const FormPage = () => {
-  const [state, setState] = useState({
-    listOfMonths: monthsAsSelectOptions,
-  });
+  const [listOfMonths, setListOfMonths] = useState(
+    monthsAsSelectOptions(months)
+  );
 
   function shuffleMonths() {
-    setState({
-      listOfMonths: state.listOfMonths.sort((a, b) => 0.5 - Math.random()),
-    });
+    setListOfMonths(monthsAsSelectOptions(months));
   }
 
   return (
@@ -42,7 +41,7 @@ const FormPage = () => {
         INFORMATION
       </div>
 
-      <div className="ms-3 mt-0 mb-5">
+      <div className="ms-3 mt-1 mb-5">
         *Please note: all fields are required.
       </div>
 
@@ -104,7 +103,7 @@ const FormPage = () => {
             onMouseDown={() => shuffleMonths()}
           >
             <option value="">-</option>
-            {state.listOfMonths}
+            {listOfMonths}
           </select>
         </div>
 

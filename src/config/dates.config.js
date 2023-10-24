@@ -32,7 +32,7 @@ export const datesAsSelectOptions = dates.map((date) => (
   </option>
 ));
 
-const months = [
+export const months = [
   { value: "January", display: "January" },
   { value: "March", display: "March" },
   { value: "April", display: "April" },
@@ -45,11 +45,14 @@ const months = [
   { value: "Month 12", display: "December" },
 ];
 
-export const monthsAsSelectOptions = months.map((month) => (
-  <option key={month.value} value={month.value}>
-    {month.display}
-  </option>
-));
+export const monthsAsSelectOptions = (months) =>
+  months
+    .map((month) => (
+      <option key={month.value} value={month.value}>
+        {month.display}
+      </option>
+    ))
+    .sort(() => 0.5 - Math.random());
 
 export function generateYearsAsSelectOptions() {
   const list = [];
