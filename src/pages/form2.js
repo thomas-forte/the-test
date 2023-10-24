@@ -9,7 +9,9 @@ const FormPage = () => (
       QUESTIONS
     </div>
 
-    <hr className="mb-2" />
+    <div className="ms-3 mt-1 mb-5">*Please note: all fields are required.</div>
+
+    <hr className="mb-3" />
 
     <form action="../processing-results" className="mb-5">
       <div className="mb-5">
@@ -594,10 +596,8 @@ const FormPage = () => (
         </div>
       </div>
 
-      <div className="form-group mb-5">
-        <button name="submit" type="submit" className="btn btn-primary">
-          Submit
-        </button>
+      <div className="form-group">
+        <button type="submit">Submit</button>
       </div>
     </form>
   </Layout>

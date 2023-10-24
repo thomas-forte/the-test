@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { navigate } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHand } from "@fortawesome/free-solid-svg-icons";
 
@@ -14,9 +14,9 @@ const NotFoundPage = () => (
         the test you're looking for isn't here. Even if it exists at all...
       </p>
       <FontAwesomeIcon icon={faHand} size="5x" className="mb-3 dark-red" />
-      <Link to="/">
-        <button type="button">Back</button>
-      </Link>
+      <button type="button" onClick={() => navigate("/")}>
+        Back
+      </button>
     </div>
   </Layout>
 );

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import InputMask from "react-input-mask";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faAddressCard,
   faChevronDown,
@@ -15,6 +14,7 @@ import { faEmpire } from "@fortawesome/free-brands-svg-icons";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
+import InputIcon from "../components/input-icon";
 import * as styles from "./form.module.css";
 
 import {
@@ -47,6 +47,7 @@ const FormPage = () => {
       </div>
 
       <hr className="mb-3" />
+
       {/* Personal Info */}
       <form action="../sponsor-video" className="mb-5">
         <div className="mb-3">
@@ -54,9 +55,7 @@ const FormPage = () => {
             Name
           </label>
           <div className="input-group">
-            <span className="input-group-text">
-              <FontAwesomeIcon icon={faAddressCard} />
-            </span>
+            <InputIcon icon={faAddressCard} />
             <input
               type="text"
               className="form-control"
@@ -64,9 +63,7 @@ const FormPage = () => {
               required
               placeholder="Rusty Lumperbean"
             />
-            <span className="input-group-text">
-              <FontAwesomeIcon icon={faChevronDown} />
-            </span>
+            <InputIcon icon={faChevronDown} />
           </div>
           <span className="form-text text-muted">
             Tip: Don't type "Rusy Lumperbean" if that isn't your name!
@@ -120,7 +117,7 @@ const FormPage = () => {
         </div>
 
         <div className="mb-3">
-          <label>Day of the Week</label>
+          <label htmlFor="dow">Day of the Week</label>
           <div>{generateDayOfTheWeekRadioButtons()}</div>
         </div>
 
@@ -129,9 +126,7 @@ const FormPage = () => {
             Approximate Time of Birth
           </label>
           <div className="input-group">
-            <span className="input-group-text">
-              <FontAwesomeIcon icon={faSun} />
-            </span>
+            <InputIcon icon={faSun} />
             <input type="time" className="form-control" name="time" required />
           </div>
           <span className="form-text text-muted">
@@ -145,9 +140,7 @@ const FormPage = () => {
             Country of Residence:
           </label>
           <div className="input-group">
-            <span className="input-group-text">
-              <FontAwesomeIcon icon={faHouseFlag} />
-            </span>
+            <InputIcon icon={faHouseFlag} />
             <select className="form-control" name="country" required>
               <option value="">-</option>
               {countriesAsSelectOptions}
@@ -164,9 +157,7 @@ const FormPage = () => {
             Home landline telephone:
           </label>
           <div className="input-group">
-            <span className="input-group-text">
-              <FontAwesomeIcon icon={faPhone} />
-            </span>
+            <InputIcon icon={faPhone} />
             <InputMask
               type="tel"
               className="form-control"
@@ -187,9 +178,7 @@ const FormPage = () => {
             Fax number:
           </label>
           <div className="input-group">
-            <span className="input-group-text">
-              <FontAwesomeIcon icon={faFax} />
-            </span>
+            <InputIcon icon={faFax} />
             <InputMask
               type="tel"
               className="form-control"
@@ -249,9 +238,7 @@ const FormPage = () => {
             FBN ID Number:
           </label>
           <div className="input-group">
-            <span className="input-group-text">
-              <FontAwesomeIcon icon={faEmpire} />
-            </span>
+            <InputIcon icon={faEmpire} />
             <InputMask
               type="text"
               className="form-control"
@@ -271,9 +258,7 @@ const FormPage = () => {
             SGTI Code:
           </label>
           <div className="input-group">
-            <span className="input-group-text">
-              <FontAwesomeIcon icon={faInstitution} />
-            </span>
+            <InputIcon icon={faInstitution} />
             <InputMask
               type="text"
               className="form-control"
@@ -298,9 +283,7 @@ const FormPage = () => {
             SSN:
           </label>
           <div className="input-group">
-            <span className="input-group-text">
-              <FontAwesomeIcon icon={faLock} />
-            </span>
+            <InputIcon icon={faLock} />
             <input
               type="text"
               className="form-control"
