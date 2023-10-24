@@ -1,151 +1,75 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { navigate } from "gatsby";
 
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 
 const ProcessingResultsPage = () => {
-  const [state, setState] = useState({
-    progressAmount: 0,
-    currentProgress: 0,
-    pStep: 0.5,
-    label: "Processing...",
-    color: "bg-primary",
-  });
+  const [progressAmount, setProgressAmount] = useState(0);
+  const [progressClass, setProgressClass] = useState("bg-primary");
+  const [progressLabel, setProgressLabel] = useState("Processing...");
 
   const step = useCallback(() => {
     const randomvalue = Math.random() * 100;
 
-    if (state.progressAmount === 0) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 9,
-      }));
-    } else if (state.progressAmount === 2) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 99,
-        label: "Oops, Hang On...",
-        color: "bg-warning",
-      }));
-    } else if (state.progressAmount === 25) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 36,
-      }));
-    } else if (state.progressAmount === 9) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 17,
-      }));
-    } else if (state.progressAmount === 17) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 32,
-      }));
-    } else if (state.progressAmount === 32) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 38,
-      }));
-    } else if (state.progressAmount === 38) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 47,
-      }));
-    } else if (state.progressAmount === 47) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 54,
-      }));
-    } else if (state.progressAmount === 54) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 62,
-      }));
-    } else if (state.progressAmount === 62) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 70,
-      }));
-    } else if (state.progressAmount === 70) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 89,
-      }));
-    } else if (state.progressAmount === 89) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 91,
-      }));
-    } else if (state.progressAmount === 91) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 94,
-      }));
-    } else if (state.progressAmount === 94) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 97,
-      }));
-    } else if (state.progressAmount === 97) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 2,
-        label: "Oops, Hang On...",
-        color: "bg-danger",
-      }));
-    } else if (state.progressAmount === 99) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 99.9,
-        label: "Processing...",
-        color: "bg-primary",
-      }));
-    } else if (state.progressAmount > 99 && state.progressAmount < 99.99) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 99.99,
-      }));
-    } else if (state.progressAmount > 99.98 && state.progressAmount < 99.999) {
-      setState((state) => ({
-        ...state,
-        progressAmount: 99.999,
-      }));
-    } else if (state.progressAmount === 99.999) {
+    if (progressAmount === 0) {
+      setProgressAmount(9);
+    } else if (progressAmount === 2) {
+      setProgressAmount(99);
+      setProgressLabel("Oops, Hang On...");
+      setProgressClass("bg-warning");
+    } else if (progressAmount === 25) {
+      setProgressAmount(36);
+    } else if (progressAmount === 9) {
+      setProgressAmount(17);
+    } else if (progressAmount === 17) {
+      setProgressAmount(32);
+    } else if (progressAmount === 32) {
+      setProgressAmount(38);
+    } else if (progressAmount === 38) {
+      setProgressAmount(47);
+    } else if (progressAmount === 47) {
+      setProgressAmount(54);
+    } else if (progressAmount === 54) {
+      setProgressAmount(62);
+    } else if (progressAmount === 62) {
+      setProgressAmount(70);
+    } else if (progressAmount === 70) {
+      setProgressAmount(89);
+    } else if (progressAmount === 89) {
+      setProgressAmount(91);
+    } else if (progressAmount === 91) {
+      setProgressAmount(94);
+    } else if (progressAmount === 94) {
+      setProgressAmount(97);
+    } else if (progressAmount === 97) {
+      setProgressAmount(2);
+      setProgressLabel("Hmmmmmmmm...");
+      setProgressClass("bg-danger");
+    } else if (progressAmount === 99) {
+      setProgressAmount(99.9);
+      setProgressLabel("Processing...");
+      setProgressClass("bg-primary");
+    } else if (progressAmount > 99 && progressAmount < 99.99) {
+      setProgressAmount(99.99);
+    } else if (progressAmount > 99.98 && progressAmount < 99.999) {
+      setProgressAmount(99.999);
+    } else if (progressAmount === 99.999) {
       if (randomvalue > 20) {
-        window.location.href = "/submissionerror";
+        navigate("/submission-error");
+      } else {
+        navigate("/");
       }
     }
-  }, [state.progressAmount]);
+  }, [progressAmount]);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      step();
-    }, 5000);
+    const interval = setInterval(() => step(), 5000);
 
     return () => {
       clearInterval(interval);
     };
   }, [step]);
-
-  // function test2() {
-  // My main confusion is mixing setInterval and setTimeout to control state. It seems unpredictable.
-  // Some stackoverflows showed using a callback, either set inside the render function or some had it as a global. My guess is its mixing native and react js.
-  // A simple example of this is if you remove the last if case things get weird but why does the interval speed up??
-  // Welp I just rebuilt and tested it but am struggling reproducing it.
-  // I suppose am I doing anything that's a major redflag here? I have seen the interval change, and some flickering with the words, numbers, and progress value.
-  // There is also a timeout on the hdglassesad.js file that sometimes acts funny (the button appears like it should but then disappears?) but of course I can't force the error right now.
-
-  // The problem with setting an interval in a plain function in the component is that test2() gets run on every render,
-  // creating a new interval each time, but the old one keeps going, and updating state causes rerenders -> new interval fn created
-  // -> exponential amount of intervals setting state. I'm honestly surprised it doesn't get crazier, maybe just with the 5 second
-  // timeout it just takes a while and usually you get randomized to the next page before it gets wild?
-  // So I would def create your interval in a useEffect, and clearing it on the return is probably not necessary but doesn't hurt.
-  // I think there are a bunch of different ways you could do the rest of it -- I broke "step" out into its own function
-  // but you could put it in the useEffect. And I changed the setStates to use a function (state) => ({...state, ...updatedstuff})
-  // so that the whole "state" object doesn't need to go in the dependency array (bc I don't think it does deep equality on objects??)
-  // Also put the randomValue inside that function so that it isn't a dependency that changes.
-  // on hdglassesad.js too I think just slap those in a useEffect and you're good!
 
   return (
     <Layout>
@@ -165,15 +89,15 @@ const ProcessingResultsPage = () => {
         >
           <div
             className={
-              state.color +
+              progressClass +
               " progress-bar progress-bar-striped progress-bar-animated"
             }
-            style={{ width: `${state.progressAmount}%` }}
+            style={{ width: `${progressAmount}%` }}
           >
-            {`${state.progressAmount}%`}
+            {`${progressAmount}%`}
           </div>
         </div>
-        <h4 className="mt-2">{state.label}</h4>
+        <h4 className="mt-2">{progressLabel}</h4>
       </div>
     </Layout>
   );
