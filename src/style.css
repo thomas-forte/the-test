@@ -58,3 +58,42 @@ button {
   float: left;
   line-height: 1.25em;
 }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s;
+}
+
+.fadeOut {
+  animation: fadeOut 30s;
+}
+
+.playButtonOverVideo {
+  position: fixed;
+  cursor: pointer;
+  color: #757575;
+}
+
+.playButtonOverVideo:hover {
+  color: #cecece;
+}
